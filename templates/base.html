@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    {% block head %}{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">  <!-- Dette er jinja2-syntax for static/css/main.css-->
+    {% block head %}{% endblock %}  <!--This is Jinja2 syntax. Its a template engine, that flask uses.-->
 </head>
 <body>
-    {% block body %}{% endblock %}
+    {% block body %}{% endblock %}  <!--I denne template, er det her vi indsætter vores kode -->
+    <!-- De andre sider behøver vi altså ikke skrive alt det her, der skriver vi direkte, og starter med overskrift f.eks. <h1></h1>  -->
 </body>
 </html>

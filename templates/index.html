@@ -1,39 +1,39 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Task Master</title>
+<title>Kalorier</title>
 {% endblock %}
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Task Master</h1>
+    <h2 style="text-align: center">Kalorier</h2>
     {% if tasks|length < 1 %}
-    <h4 style="text-align: center">There are no tasks. Create one below!</h4>
+    <h4 style="text-align: center">Indtast neden for</h4>
     {% else %}
     <table>
         <tr>
-            <th>Task</th>
-            <th>Added</th>
-            <th>Actions</th>
+            <th>Antal</th>
+            <th>Dato</th>
+            <th>Aktion</th>
         </tr>
-        {% for task in tasks %}
+        {% for task in tasks %}  <!-- For-loop. Tager alle de tasks vi har lavet-->
             <tr>
-                <td>{{ task.content }}</td>
-                <td>{{ task.date_created.date() }}</td>
+                <td>{{ task.content }}</td>  <!-- returns the content for each task -->
+                <td>{{ task.date_created.strftime("%m/%d/%Y %H:%M:%S") }}</td>  <!--return the date of the creation, so .date is on to prevent time from being shown aslo-->
                 <td>
-                    <a href="/delete/{{task.id}}">Delete</a>
+                    <a href="/delete/{{task.id}}">Slet</a>
                     <br>
-                    <a href="/update/{{task.id}}">Update</a>
+                    <a href="/update/{{task.id}}">Opdater</a>
                 </td>
             </tr>
-        {% endfor %}
+        {% endfor %} <!--Slutter for-loopet-->
     </table>
     {% endif %}
 
     <div class="form">
         <form action="/" method="POST">
-            <input type="text" name="content" id="content">
-            <input type="submit" value="Add Task">
+            <input type="number" min ="25" max="9999" name="content" id="content">
+            <input type="submit" value="Tilføj">
         </form>
     </div>
 </div>

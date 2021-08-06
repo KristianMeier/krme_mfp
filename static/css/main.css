@@ -1,12 +1,20 @@
 body, html {
     margin: 0;
     font-family: sans-serif;
-    background-color: lightblue;
+    background-color: rgb(255, 255, 255);
+    touch-action: manipulation;
+    font-size: 0.7em;
 }
+
+html {
+    font-size: 0.7em;
+  }
 
 .content {
     margin: 0 auto;
-    width: 400px;
+    width: 225px;
+    text-align: center
+    
 }
 
 table, td, th {
@@ -15,7 +23,10 @@ table, td, th {
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    /*width: 100%;*/
+    table-layout: fixed;
+    width: 225px;
+    
 }
 
 th {
@@ -32,5 +43,6 @@ td {
 }
 
 #content {
-    width: 70%;
+    width: 50%;
+    text-align: center;
 }

@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Task Master</title>
+<title >Kalorier</title>
 {% endblock %}
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Update Task</h1>
+    <h1 style="text-align: center">Opdater indtastning</h1>
 
     <div class="form">
         <form action="/update/{{task.id}}" method="POST">
-            <input type="text" name="content" id="content" value="{{task.content}}">
+            <input type="number" min ="25" max="9999" name="content" id="content" value="{{task.content}}">
             <input type="submit" value="Update">
         </form>
     </div>
