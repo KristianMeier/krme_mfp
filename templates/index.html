@@ -12,17 +12,19 @@
     {% else %}
     <table>
         <tr>
-            <th>Antal</th>
+            <th>kCal</th>
+            <th>Vægt</th>
             <th>Dato</th>
             <th>Aktion</th>
         </tr>
         {% for task in tasks %}  <!-- For-loop. Tager alle de tasks vi har lavet-->
             <tr>
                 <td>{{ task.content }}</td>  <!-- returns the content for each task -->
-                <td>{{ task.date_created.strftime("%m/%d/%Y %H:%M:%S") }}</td>  <!--return the date of the creation, so .date is on to prevent time from being shown aslo-->
+                <td> 100 </td>
+                <td>{{ task.date_created.strftime("%m/%d/%Y") }}</td>  <!--return the date of the creation, so .date is on to prevent time from being shown aslo-->
                 <td>
-                    <a href="/delete/{{task.id}}">Slet</a>
-                    <br>
+                    <!--<a href="/delete/{{task.id}}">Slet</a>-->
+                    <!--<br>-->
                     <a href="/update/{{task.id}}">Opdater</a>
                 </td>
             </tr>
@@ -33,6 +35,9 @@
     <div class="form">
         <form action="/" method="POST">
             <input type="number" min ="25" max="9999" name="content" id="content">
+            <input type="submit" value="Tilføj">
+            <br>
+            <input type="number" min ="75" max="110" name="content" id="content">
             <input type="submit" value="Tilføj">
         </form>
     </div>
